@@ -3,13 +3,12 @@ import java.util.Scanner;
 public class LineComparison {
 static int x1,y1,x2,y2;
     public static void main(String[] args) {
-        double lenght1=getInput();
-        double length2=getInput();
-        if(lenght1==length2){
-            System.out.println("lines are equals");
-        }
-        else System.out.println("Lines are not equal");
-
+        Double length1=getInput();
+        Double length2=getInput();
+        int result=length1.compareTo(length2);
+        if(result==0)System.out.println("lines are equals");
+        if(result==1) System.out.println("First line is grater than second");
+        else System.out.println("First line os grater then Second");
     }
 
     private static double calculatedLength() {
@@ -18,8 +17,6 @@ static int x1,y1,x2,y2;
         double length = Math.floor(Math.sqrt(x+y));
         return length;
     }
-
-
     private static double getInput() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter Line Coordinate for first point");
